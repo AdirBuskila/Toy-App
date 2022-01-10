@@ -1,0 +1,42 @@
+@font-face {
+    font-family: toy;
+    src: url(/src/assets/fonts/Toyster-jE9py.ttf);
+}
+
+/* GENERAL  */
+
+body {
+    background-color: #1f96f4;
+}
+
+/* HOME */
+
+.home-img {
+    width: 90vw;
+    border-radius: 10px;
+}
+.home-page{
+    text-align: center;
+}   
+
+/* HEADER */
+
+.app-header {
+    border-radius: 10px;
+    background-color: #186fb3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo-container {
+    display: flex;
+    font-family: toy, serif;
+    align-items: center;
+    font-size: 1.6em;
+}
+.app-header img {
+    margin-inline-start: 10px;
+    height: 50px;
+}
