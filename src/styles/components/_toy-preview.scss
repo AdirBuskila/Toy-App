@@ -1,0 +1,17 @@
+.toy-preview {
+    text-align: center;
+    border: 3px lightblue solid;
+    border-radius: 10px;
+    transition: 0.3s transform;
+  }
+  .toy-preview:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+  .toy-preview img {
+    border-radius: 10px;
+    height: 200px;
+  }
+  .toy-preview span {
+    color: lightcoral;
+  }

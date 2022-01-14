@@ -1,0 +1,38 @@
+.toy-details {
+    height: 90vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  /* .toy-details phone {
+      flex-direction: column-reverse;
+  } */
+  
+  .toy-details .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+  }
+  .toy-details .info h2 {
+    margin-bottom: 0;
+  }
+  .toy-details .info p {
+    display: inline;
+  }
+  
+  .toy-details img {
+    border-radius: 10px;
+    height: 400px;
+    border: 1px black solid;
+  }
+  
+  .toy-details span {
+    color: rgb(119, 31, 31);
+  }
+  
+  .toy-reviews {
+    text-align: center;
+  }

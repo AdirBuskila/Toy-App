@@ -1,0 +1,29 @@
+.app-header {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background: rgb(30, 196, 203);
+    background: linear-gradient(
+      176deg,
+      rgba(30, 196, 203, 1) 0%,
+      rgba(255, 255, 255, 0.020512428604254174) 100%
+    );
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .logo-container {
+    display: flex;
+    font-family: toy, serif;
+    align-items: center;
+    font-size: 1.6em;
+  }
+  .logo-container h3 {
+    margin: 10px 10px;
+    font-size: 1.5em;
+  }
+  .app-header img {
+    margin-inline-start: 10px;
+    height: 50px;
+  }

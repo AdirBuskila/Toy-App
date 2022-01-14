@@ -1,0 +1,24 @@
+.stats {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+  }
+  .toy-price-stats {
+    height: 350px;
+    width: 350px;
+    text-align: center;
+  }
+  
+  .stats-container {
+    text-align: center;
+    background-color: #229cb19a;
+    border-radius: 5px;
+  }
+  
+  .toy-price-stats h1 {
+    font-size: 1.4rem;
+    margin: 0;
+    color: rgb(37, 21, 182);
+  }

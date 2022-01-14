@@ -6,6 +6,7 @@ import { userReducer } from "./user.reducer.js";
 
 const rootReducer = combineReducers({
     toyModule : toyReducer,
+    userModule : userReducer
 
 })
 

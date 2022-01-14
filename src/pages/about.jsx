@@ -23,7 +23,6 @@ export class About extends Component {
     render() {
         const { selectedShop } = this.state
         const { currLat, currLng } = this.state
-        console.log('selectedShop:', selectedShop);
         
 
         return (

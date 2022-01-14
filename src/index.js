@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './assets/css/main.css'
+// import './assets/css/main.css'
+import './styles/styles.scss';
+
 
 import { RootCmp } from './root-cmp'
 import { BrowserRouter as Router } from 'react-router-dom'

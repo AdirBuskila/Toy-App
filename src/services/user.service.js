@@ -1,4 +1,5 @@
 import { storageService } from './async-storage.service.js'
+import axios from 'axios';
 
 const STORAGE_KEY = 'user'
 const STORAGE_KEY_LOGGEDIN = 'loggedinUser'
@@ -9,32 +10,35 @@ export const userService = {
     signup,
     getLoggedinUser,
     emptyUser,
-    chargeAmount
 }
 
 window.us = userService
 
 async function login(credentials) {
     try {
-        const users = await storageService.query(STORAGE_KEY)
+        const users = await axios.get('http://localhost:3030/api/user')
+        console.log(users)
         const user = users.find(user => user.username === credentials.username &&
             user.password === credentials.password)
-            _setLoggedinUser(user)
-            return user
-            
-    }catch (err) {
-        console.log('cannot login',err);
+        _setLoggedinUser(user)
+        return user
+
+    } catch (err) {
+        console.log('cannot login', err);
     }
 
 
 
 }
-function signup(userInfo) {
-    return storageService.post(STORAGE_KEY, userInfo)
-        .then((user) => {
-            _setLoggedinUser(user)
-            return user
-        })
+async function signup(userInfo) {
+    try {
+        const user = await axios.post('http://localhost:3030/api/user', userInfo)
+        console.log('user',user)
+        // _setLoggedinUser(user)
+        return user
+    } catch (err) {
+        console.log('cannot sign up', err);
+    }
 }
 function logout() {
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN, null)

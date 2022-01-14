@@ -12,19 +12,17 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { userService } from '../services/user.service';
-import { connect } from 'react-redux';
-
 
 const theme = createTheme();
 // console.log('theme', theme);
 
-function _MyLogin() {
+export function MyLogin() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
     console.log({
-      username: data.get('user'),
+      user: data.get('user'),
       password: data.get('password'),
     });
   };
@@ -81,7 +79,7 @@ function _MyLogin() {
               variant='contained'
               style={{ marginTop: 3, marginBottom: 2 }}
             >
-              Login
+              Sign In
             </Button>
           </Box>
         </Box>
@@ -89,13 +87,3 @@ function _MyLogin() {
     </ThemeProvider>
   );
 }
-
-function mapStateToProps(state) {
-  return {};
-}
-const mapDispatchToProps = {};
-
-export const MyLogin = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(_MyLogin);

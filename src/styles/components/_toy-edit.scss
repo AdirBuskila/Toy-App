@@ -1,0 +1,15 @@
+.toy-edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: rgba(8, 8, 8, 0.562);
+    width: 90vw;
+    height: 90vh;
+  }
+  
+  .toy-edit input {
+    display: block;
+  }
+  
