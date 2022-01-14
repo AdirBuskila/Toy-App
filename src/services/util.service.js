@@ -1,7 +1,10 @@
 export const utilService = {
     makeId,
     makeLorem,
-    getRandomIntInclusive
+    getRandomIntInclusive,
+    capitalizeFirstLetter,
+    toysPerYear,
+    pricesPerToyLabels,
 }
 
 function makeId(length = 6) {
@@ -30,3 +33,60 @@ function getRandomIntInclusive(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
 }
+
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function pricesPerToyLabels(toys) {
+    const labels = [
+      "On wheels",
+      "Box game",
+      "Art",
+      "Baby",
+      "Doll",
+      "Puzzle",
+      "Outdoor",
+    ];
+    let avgPrices = [
+      { sum: 0, num: 0 },
+      { sum: 0, num: 0 },
+      { sum: 0, num: 0 },
+      { sum: 0, num: 0 },
+      { sum: 0, num: 0 },
+      { sum: 0, num: 0 },
+      { sum: 0, num: 0 },
+    ];
+    for (let i = 0; i < toys.length; i++) {
+      const toy = toys[i];
+      toy.labels.forEach((currLabel) => {
+        let idx = labels.findIndex((label) => {
+          return label === currLabel;
+        });
+        if (idx && idx !== -1) {
+          avgPrices[idx].sum += Number(toy.price);
+          avgPrices[idx].num += 1;
+        }
+      });
+    }
+    var arr = avgPrices.map((avg) => {
+      if (avg.sum === 0) return 0;
+      return Math.floor(avg.sum / avg.num);
+    });
+    return arr;
+  }
+  
+  function toysPerYear(toys) {
+    let toysPerYear = {};
+    toys.forEach((toy) => {
+      var { createdAt } = toy;
+      const date = new Date(createdAt);
+      var year = date.getFullYear();
+      var count = toysPerYear[year];
+      count = !count ? 1 : count + 1;
+      toysPerYear[year] = count;
+    });
+    return toysPerYear;
+  }
+  

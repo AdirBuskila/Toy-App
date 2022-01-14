@@ -14,15 +14,18 @@ export const userService = {
 
 window.us = userService
 
-function login(credentials) {
-    return storageService.query(STORAGE_KEY).then(users => {
+async function login(credentials) {
+    try {
+        const users = await storageService.query(STORAGE_KEY)
         const user = users.find(user => user.username === credentials.username &&
             user.password === credentials.password)
+            _setLoggedinUser(user)
+            return user
             
-        _setLoggedinUser(user)
+    }catch (err) {
+        console.log('cannot login',err);
+    }
 
-        return user
-    })
 
 
 }

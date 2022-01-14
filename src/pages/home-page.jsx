@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import home from '../assets/img/home.jpg'
 
+
 class _HomePage extends React.Component {
     state = {
 

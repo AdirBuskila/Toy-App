@@ -7,7 +7,7 @@ const initialState = {
     selectedToy: null
 }
 
-export function toyReducer(state = initialState, action) {
+export function userReducer(state = initialState, action) {
 
     let newState = state;
 
